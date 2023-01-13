@@ -37,6 +37,8 @@ export default class ChatRoom {
 
     //Display db messages on init
     this.renderMessages();
+    //Set message-box scrollbar to bottom (see most recent messages)
+    this.messageSection.scrollTop = this.messageSection.scrollHeight;
 
     //listeners
 
