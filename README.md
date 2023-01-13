@@ -1,7 +1,7 @@
 # InternationalChatroom
 City based chatroom site with firebase.firestore as storage.
 
-**Examples**
+**Examples**<br>
 <img src="https://github.com/adkr38/InternationalChatroom/blob/master/images/snap3.png">
 <br>
 <img src="https://github.com/adkr38/InternationalChatroom/blob/master/images/snap2.png">
