@@ -1,0 +1,655 @@
+.main-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+}
+#load-icon {
+  animation: load 10s linear infinite;
+  width: 50%;
+}
+
+@keyframes load {
+  0% {
+    opacity: 0.5;
+    filter: invert(78%) sepia(21%) saturate(670%) hue-rotate(156deg)
+      brightness(96%) contrast(92%);
+  }
+  25% {
+    opacity: 1;
+    filter: invert(90%) sepia(12%) saturate(300%) hue-rotate(201deg)
+      brightness(101%) contrast(96%);
+  }
+  75% {
+    opacity: 0.7;
+    filter: invert(8%) sepia(73%) saturate(7491%) hue-rotate(243deg)
+      brightness(71%) contrast(122%);
+  }
+  100% {
+    opacity: 0.6;
+    filter: invert(78%) sepia(21%) saturate(670%) hue-rotate(156deg)
+      brightness(96%) contrast(92%);
+  }
+}
+
+.loading-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-align: center;
+}
+
+body {
+  position: relative;
+  background-color: white;
+  text-align: center;
+  margin: 0;
+}
+
+.wavy-bg {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.waves-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  bottom: 2rem;
+  /* overflow: hidden; */
+}
+
+.wave {
+  -webkit-mask-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(0, 0, 0, 0.2)),
+    to(rgba(0, 0, 0, 0))
+  );
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+  margin: 0 -1.5rem;
+  position: absolute;
+  filter: invert(66%);
+  width: 20%;
+}
+
+.wave0 {
+  animation: wavy0 25s linear infinite;
+}
+.wave1 {
+  animation: wavy1 25s linear infinite;
+}
+.wave2 {
+  animation: wavy1 25s linear infnite;
+}
+
+#wave1 {
+  left: 10%;
+  opacity: 1;
+}
+
+#wave2 {
+  left: 20%;
+  opacity: 1;
+}
+#wave3 {
+  left: 40%;
+  opacity: 0.8;
+}
+#wave4 {
+  left: 50%;
+  opacity: 0.7;
+}
+#wave5 {
+  left: 55%;
+  opacity: 1;
+}
+#wave6 {
+  left: 60%;
+  opacity: 1;
+}
+#wave7 {
+  left: 70%;
+
+  opacity: 0.8;
+}
+#wave8 {
+  left: 75%;
+  opacity: 1;
+}
+@keyframes wavy0 {
+  0% {
+    transform: translateX(0%) translateY(0%);
+  }
+
+  25% {
+    transform: translateX(35%) translateY(42%);
+  }
+  75% {
+    transform: translateX(-35%) translateY(25%);
+  }
+  100% {
+    transform: translateX(0%) translateY(0%);
+  }
+}
+
+@keyframes wavy1 {
+  0% {
+    transform: translateX(0%) translateY(0%);
+  }
+
+  25% {
+    transform: translateX(-30%) translateY(55%);
+  }
+
+  75% {
+    transform: translateX(15%) translateY(22%);
+  }
+  100% {
+    transform: translateX(0%) translateY(0%);
+  }
+}
+
+h1 {
+  color: black;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin-bottom: 1vmin;
+}
+
+.cards-wrapper {
+  position: relative;
+  margin: 0 auto;
+  padding: 3vmin;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  width: 60%;
+  height: 5vw;
+}
+
+.cards {
+  margin: auto 3vmin;
+  width: 100%;
+  height: 100%;
+  display: none;
+  grid-auto-flow: column;
+  grid-template-columns: 0fr 0fr 0.5fr 1fr 1fr 0.5fr 0fr 0fr;
+  justify-items: center;
+  align-items: center;
+  column-gap: 2%;
+  transition: all 0.5s ease-in-out;
+}
+
+.hr-slider {
+  color: black;
+  width: 15%;
+  border: 0.1em solid rgba(0, 0, 0, 0.1);
+  border-top: 0;
+  border-radius: 1rem;
+}
+
+.option {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  border-radius: 1.5rem;
+  outline: 0 solid whitesmoke;
+  background-position: center;
+  animation: shiftingBg 20s linear infinite;
+  transition: all 0.5s ease-in-out;
+}
+
+.option:hover {
+  /* outline-width: 0.15em; */
+  box-shadow: 0em 0.3em 0.1em skyblue;
+  transform: translateY(-0.2em);
+}
+
+.option:hover > .option-text {
+  opacity: 0;
+}
+
+.option-text {
+  font-size: clamp(15px, 2vw, 80px);
+  pointer-events: none;
+  opacity: 0.7;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  transition: all 0.5s ease-in-out;
+  color: white;
+}
+
+.overflowing-card {
+  /* height: 50%; */
+  /* width: 100%; */
+  filter: grayscale(80%);
+  transition: all 0.5s ease-in-out;
+  opacity: 0.3;
+}
+
+.centered-card {
+  filter: grayscale(0%);
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
+}
+
+.hidden-card {
+  filter: grayscale(100%);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+@keyframes shiftingBg {
+  0% {
+    background-size: 130% 130%;
+    background-position: right;
+  }
+  50% {
+    background-size: 150% 150%;
+    background-position: left;
+  }
+  100% {
+    background-size: 130% 130%;
+    background-position: right;
+  }
+}
+.option-lon {
+  background-image: url("../images/lon.jpeg");
+}
+
+.option-mad {
+  background-image: url("../images/mad.jpeg");
+}
+
+.option-mar {
+  background-image: url("../images/mar.jpeg");
+}
+
+.option-jap {
+  background-image: url("../images/jap.jpeg");
+}
+
+.option-bei {
+  background-image: url("../images/bei.webp");
+}
+
+.option-ber {
+  background-image: url("../images/ber.jpeg");
+}
+
+.option-par {
+  background-image: url("../images/par.jpeg");
+}
+
+.option-bcn {
+  background-image: url("../images/bcn.jpeg");
+}
+
+.arrow {
+  font-size: 3vmin;
+  color: black;
+  opacity: 0.5;
+}
+
+.chat {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 0.5rem 1rem;
+  position: relative;
+  /* border: 0.2em solid skyblue; */
+  margin: 5rem auto;
+  height: 30em;
+  width: 50%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: middle;
+  justify-items: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.chat::-webkit-scrollbar {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.country-span {
+  text-align: left;
+  position: absolute;
+  left: 2rem;
+  color: skyblue;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.messages-section {
+  overflow-y: scroll;
+  margin-top: 2.5rem;
+  width: 90%;
+  padding: 3%;
+  height: 18rem;
+  border-radius: 1em;
+  /* background: linear-gradient( */
+  /*   to bottom right, */
+  /*   rgba(135, 206, 235, 0.5) 20%, */
+  /*   rgba(135, 206, 235, 0.3) 100% */
+  /* ); */
+}
+
+.message-box {
+  width: 80%;
+  height: 2rem;
+  position: relative;
+  margin-top: 0.7rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.self-login {
+  margin: 0;
+  width: 5.5rem;
+  height: 100%;
+  background: skyblue;
+  border-radius: 0.5em 0 0 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.self-login * {
+  transition: all 0.5s ease-in-out;
+}
+
+.self-login span {
+  position: static;
+  color: white;
+  font-size: 0.65rem;
+}
+
+.self-login i {
+  position: absolute;
+  opacity: 0;
+  color: white;
+  cursor: pointer;
+}
+
+.self-login:hover > span {
+  opacity: 0;
+}
+
+.self-login:hover > i {
+  opacity: 1;
+}
+
+.message-box input {
+  box-sizing: border-box;
+  padding: 0 1rem;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0.5em 0.5em 0;
+  border: 0.15em solid skyblue;
+  border-left: 0.15em solid skyblue;
+  display: flex;
+  flex-direction: row;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.message-box input:focus {
+  outline: none;
+}
+
+.texting-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.message-input {
+  overflow-wrap: break-word;
+}
+.pick-emoji {
+  position: absolute;
+  right: 2%;
+  top: 15%;
+  color: skyblue;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+.emoji {
+  margin: 0 0.2em;
+  display: block;
+  cursor: pointer;
+  font-size: 1.4rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.emoji:hover {
+  transform: scale(1.2);
+}
+
+.emojiPicker {
+  display: grid;
+  position: absolute;
+  grid-template-columns: 1fr 1fr 1fr;
+  top: -8rem;
+  right: 0;
+  padding: 1em 1.2em 1em 1.2em;
+  width: 6rem;
+  height: 5.5rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 1.6rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(5%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(5%);
+    opacity: 0;
+  }
+}
+.emojiPicker::-webkit-scrollbar {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.exit-emoji {
+  font-size: 1rem;
+  color: gray;
+  position: absolute;
+  top: 5%;
+  right: -1%;
+  cursor: crosshair;
+}
+
+.popup-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.account-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 1.5em;
+  font-size: 3rem;
+  opacity: 1;
+  filter: blur(0);
+  color: black;
+  border-radius: 2rem;
+  background: linear-gradient(to top right, skyblue, white 60%);
+  transform: translate(-50%, -50%);
+  animation: popupFadeIn 0.5s;
+}
+
+.account-popup * {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+@keyframes popupFadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.new-username-text {
+  font-size: 1.5rem;
+  color: black;
+  margin: 0;
+}
+
+.account-popup form {
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-rows: 1fr 1fr;
+  place-items: center;
+  margin-top: 1rem;
+}
+
+.input-username {
+  border: 0.1rem solid lightblue;
+  border-radius: 0.4rem;
+  width: 15rem;
+  height: 2rem;
+  padding-left: 0.8em;
+}
+
+.input-username:focus {
+  outline: none;
+}
+
+.submit-username {
+  border-radius: 5rem;
+  width: 7rem;
+  height: 2rem;
+  border: 0.1rem solid skyblue;
+  background-color: white;
+  color: skyblue;
+  transition: all 0.6s ease-in-out;
+}
+
+.submit-username:hover {
+  color: black;
+  background: rgba(0, 0, 0, 0.1);
+  border-color: black;
+}
+
+.chat-bubble {
+  position: relative;
+  font-size: 13rem;
+  width: 80%;
+  overflow-wrap: break-word;
+  color: black;
+}
+
+.message {
+  position: relative;
+  display: grid;
+  grid-auto-flow: row;
+  margin: 1.4rem auto;
+}
+
+.message span {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.message-content {
+  position: relative;
+  width: fit-content;
+  padding: 0.6em 1.2em;
+  background-color: black;
+  border-radius: 10rem;
+  display: grid;
+  place-items: center;
+}
+
+.content {
+  color: white;
+  font-size: 0.7rem;
+}
+
+.message-header {
+  position: absolute;
+  top: -1.3rem;
+}
+
+.message-username {
+  margin-left: 0.5rem;
+  color: black;
+  font-size: 0.6rem;
+}
+
+.message-time {
+  color: black;
+  margin-left: 0.2rem;
+  font-size: 0.6rem;
+}
+
+@keyframes clickChat {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(0.95) translateY(-0.2em);
+    /* opacity: 0.5; */
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}

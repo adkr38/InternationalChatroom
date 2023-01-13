@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="main-loader">
+      <div class="loading-wrapper">
+        <img id="load-icon" src="./images/load.png" />
+        <h3 class="loading-h3">Loading</h3>
+      </div>
+    </div>
+    <div class="blur-wrapper">
+      <h1>International Chatroom</h1>
+
+      <main>
+        <div class="cards-wrapper">
+          <div class="wavy-bg">
+            <div class="waves-wrapper">
+              <img class="wave wave1" id="wave2" src="./images/wave2.png" />
+              <img class="wave wave0" id="wave1" src="./images/wave3.png" />
+              <img class="wave wave2" id="wave3" src="./images/wave3.png" />
+              <img class="wave wave1" id="wave4" src="./images/wave2.png" />
+              <img class="wave wave0" id="wave5" src="./images/wave3.png" />
+              <img class="wave wave1" id="wave6" src="./images/wave2.png" />
+              <img class="wave wave2" id="wave7" src="./images/wave3.png" />
+              <img class="wave wave1" id="wave8" src="./images/wave2.png" />
+            </div>
+          </div>
+          <span class="material-icons arrow left-scroller">arrow_back_ios</span>
+          <div class="cards">
+            <div id="BCN" class="option option-bcn">
+              <span class="option-text">BCN</span>
+            </div>
+
+            <div id="PAR" class="option option-par">
+              <span class="option-text">PAR</span>
+            </div>
+
+            <div id="MAD" class="option option-mad">
+              <span class="option-text">MAD</span>
+            </div>
+
+            <div id="MAR" class="option option-mar">
+              <span class="option-text">MAR</span>
+            </div>
+
+            <div id="LON" class="option option-lon">
+              <span class="option-text">LON</span>
+            </div>
+
+            <div id="JAP" class="option option-jap">
+              <span class="option-text">JAP</span>
+            </div>
+
+            <div id="BER" class="option option-ber">
+              <span class="option-text">BER</span>
+            </div>
+
+            <div id="BEI" class="option option-bei">
+              <span class="option-text">BEI</span>
+            </div>
+          </div>
+          <span class="material-icons arrow right-scroller"
+            >arrow_forward_ios</span
+          >
+        </div>
+        <hr class="hr-slider" />
+      </main>
+    </div>
+    <script src="./app.js" type="module"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyBfZ32HwrfQxSvQMFa2EFnm2yBj9CS9Q3c",
+        authDomain: "internationalchat-7b98f.firebaseapp.com",
+        projectId: "internationalchat-7b98f",
+        storageBucket: "internationalchat-7b98f.appspot.com",
+        messagingSenderId: "744654185122",
+        appId: "1:744654185122:web:d1e17425b851a7cfd9adfb",
+      };
+
+      const app = firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+  </body>
+</html>
