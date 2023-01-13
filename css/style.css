@@ -10,6 +10,10 @@
   width: 50%;
 }
 
+.blur-wrapper {
+  display: none;
+}
+
 @keyframes load {
   0% {
     opacity: 0.5;
