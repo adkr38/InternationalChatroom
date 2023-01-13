@@ -25,12 +25,10 @@ export default class Slider {
 
     //Listeners
     this.leftScroller.addEventListener("click", () => {
-      console.log("scroll left");
       this.scroll("l");
     });
 
     this.rightScroller.addEventListener("click", () => {
-      console.log("Scroll right");
       this.scroll("r");
     });
 
@@ -85,7 +83,6 @@ export default class Slider {
 
       this.grid.style.gridTemplateColumns =
         this._createGridTemplateColumnsString();
-      console.log(this.grid.style.gridTemplateColumns);
       return;
     }
     if (this.currentOrder.at(-1) === 1) {
@@ -96,7 +93,6 @@ export default class Slider {
     this.currentOrder = this.currentOrder.slice(0, -1);
 
     if (this.currentOrder.at(0) === 1) {
-      console.log("adding .5");
       this.currentOrder.unshift(0.5);
       this.positionClasses.unshift(this.possibleClasses[1]);
     } else {
