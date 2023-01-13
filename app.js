@@ -3,7 +3,6 @@ import ChatRoom from "./chat.js";
 
 const mainLoader = document.querySelector(".main-loader");
 const blurWrapper = document.querySelector(".blur-wrapper");
-blurWrapper.style.display = "none";
 
 const chatData = ChatRoom.fetchMessages()
   .then((data) => {
