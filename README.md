@@ -1,5 +1,6 @@
 # InternationalChatroom
 City based chatroom site with firebase.firestore as storage.
+Hosted by github pages: https://adkr38.github.io/InternationalChatroom/
 
 **Examples**<br>
 <div style="margin:3rem auto;">
