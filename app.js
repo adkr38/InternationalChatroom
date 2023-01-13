@@ -9,7 +9,6 @@ const chatData = ChatRoom.fetchMessages()
   .then((data) => {
     mainLoader.style.display = "none";
     blurWrapper.style.display = "block";
-
     const slider = new Slider();
 
     ChatRoom.addChatListeners(data);
